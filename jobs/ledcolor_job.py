@@ -6,6 +6,7 @@ from ndscheduler.corescheduler import job
 
 logger = logging.getLogger(__name__)
 
+
 class LedChangeColorJob(job.JobBase):
     COLOR_CHANGE_URL = "http://{}:8080/set_{}?{}={}"
 
