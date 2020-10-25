@@ -29,6 +29,8 @@ class LedChangeColorJob(job.JobBase):
 
     def run(self, argument1, argument2, argument3, *args, **kwargs):
         print('LedChangeColorJob: Argument1: %s, Argument2: %s, Argument3: %s' % (argument1, argument2, argument3))
+        if argument1.endswith(".local") is not True:
+            argument1 = argument1 + ".local"
         url = self.COLOR_CHANGE_URL.format(argument1, argument2, argument2, argument3)
         print(url)
         r = requests.get(url=url)
